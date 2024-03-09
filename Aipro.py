@@ -1,38 +1,49 @@
-#first problem
-l=[2,7,4,1,3,6]
-L=len(l)
-sum=0
-for i in range(L-1):
-    for j in range(L-1-i):
-        if(l[j]+l[j+1] == 10):  #it just checks for the ==10 and adds to the sum
-            sum=sum+1
-print(sum)
+# first problem
+def Findsum(m):
+    L=len(m)
+    sum=0
+    for i in range(L-1):
+        for j in range(L-1-i):
+            if(m[j]+m[j+1] == 10):  #it just checks for the ==10 and adds to the sum
+                sum=sum+1
+    return sum
+a=[2,7,3,8,9,1]  #input that is passed into the function
+Findsum(a)
+print(Findsum(a))  #prints the returned value
+
+
 
 #second problem
 
-print("enter the noof elements")
-l=[]
-n=int(input())
-if (n<3):  #the program checks for the minimum input 
-    print("give more numbers")
-else:#else it goes to the code block
-    for i in range(n):
-      m=int(input())
-      l.append(m)
-    L=len(l)
-    for i in range(L-1):
-      for j in range(L-1-i): #what is done is that i sorted the list thst i have enterd and took zeroth index and last
-         if (l[j]< l[j+1]):
-          temp=l[j]
-          l[j]=l[j+1]
-          l[j+1]=temp
-      print("the sorted list is")
-      print(l)
-      B=l[0]#
-      S=l[L-1]
+def find_difference():
+    print("Enter the number of elements:")
+    l = []
+    n = int(input())
 
-      diff=(B-S)
-      print(diff)#we can get the difference just by taking the last index and first index and difference
+    if n < 3:
+        print("Give more numbers")
+    else:
+        for i in range(n):
+            m = int(input())
+            l.append(m)
+
+        L = len(l)
+        for i in range(L - 1):
+            for j in range(L - 1 - i):
+                if l[j] < l[j + 1]:
+                    temp = l[j]
+                    l[j] = l[j + 1]
+                    l[j + 1] = temp
+
+        print("The sorted list is:", l)
+        B = l[0]
+        S = l[L - 1]
+        diff = B - S
+
+        return diff
+
+result = find_difference()
+print("The difference between the largest and smallest numbers is:", result)
 
 #third problem
       
